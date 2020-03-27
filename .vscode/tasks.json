@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Copy Config",
+            "type": "shell",
+            "command": "cp conf/DUMBVM conf/${input:VersionName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Config",
+            "type": "shell",
+            "command": "cd conf/;./config ${input:VersionName}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Make Depend",
+            "type": "shell",
+            "command": "cd compile/${input:VersionName};bmake depend",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build and Install",
+            "type": "shell",
+            "command": "cd compile/${input:VersionName};bmake;bmake install",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run OS161",
+            "type": "shell",
+            "command": "cd /home/pds/pds-os161/root;sys161 -w kernel",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "VersionName",
+            "description": "Nome della versione"
+        }
+    ]
+}
