@@ -34,7 +34,13 @@
         {
             "label": "Run OS161",
             "type": "shell",
-            "command": "cd ${env:HOME}/pds-os161/root;sys161 -w kernel",
+            "command": "cd ${env:HOME}/os161/root;sys161 -w kernel",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run OS161 (no debug)",
+            "type": "shell",
+            "command": "cd ${env:HOME}/os161/root;sys161 kernel",
             "problemMatcher": []
         }
     ],
