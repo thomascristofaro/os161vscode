@@ -8,14 +8,14 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/pds/pds-os161/root/kernel",
+            "program": "${env:HOME}/os161/root/kernel",
             "args": [],
             "stopAtEntry": true,
-            "cwd": "/home/pds/pds-os161/root",
+            "cwd": "${env:HOME}/os161/root",
             "environment": [],
             "externalConsole": false,
             "miDebuggerServerAddress": "unix:.sockets/gdb",
-            "miDebuggerPath": "/home/pds/os161/tools/bin/mips-harvard-os161-gdb",
+            "miDebuggerPath": "${env:HOME}/os161/tools/bin/mips-harvard-os161-gdb",
             "MIMode": "gdb",
             "setupCommands": [
                 {
